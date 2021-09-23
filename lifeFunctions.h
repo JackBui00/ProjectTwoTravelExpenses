@@ -37,12 +37,24 @@ int calculateLunch(int days, int departure, int arrival){
     else if(departure >= 1200 && arrival <= 1300){
         return businesslunch -= 2;
     }
-    //// if both lunch were not covered by the business, but both weren't covered by the business, one was covered by the business. 
+    // if both lunch were not covered by the business, but both weren't covered by the business, one was covered by the business
     else{
         return businesslunch -= 1; 
     }
 }
 int calculateDinner(int days, int departure, int arrival){
     int businessdinner = days;
+    // if departure falls before 6pm and the arrival home falls after 7pm, dinner on the first and last day of the trip is covered by the business
+    if(departure < 1800 && arrival > 1900){
+        return businessdinner; 
+    }
+    // if depareture falls on or after 6pm and the arrival home falls on or before 7pm, dinner on the first and last day of the trip is not covered by the business
+    else if(departure >= 1800 && arrival >= 1900){
+        return businessdinner -= 2; 
+    }
+    // if both dinner were not covered by the business, but both weren't covered by the business, one was covered by the business
+    else{
+        return businessdinner -= 1; 
+    }
 }
 #endif
