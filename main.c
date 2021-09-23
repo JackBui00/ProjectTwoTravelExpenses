@@ -30,7 +30,7 @@ int main(){
         char wasATaxiUsed[10];
         int numberDaysTaxiWasUsed = 0; 
         int totalTaxiCost = 0; 
-        int taxiBusinessCover = 0; 
+        int taxiCompanyCover = 0; 
         //request if a taxi was used
         printf("Was a Taxi used?");
         scanf(" %s",&wasATaxiUsed);
@@ -39,16 +39,16 @@ int main(){
         if(result == 0){
             printf("How many days of the trip was a taxi taken? ");
             scanf("%d",&numberDaysTaxiWasUsed);
-            taxiBusinessCover = numberDaysTaxiWasUsed * 10; 
+            taxiCompanyCover = numberDaysTaxiWasUsed * 10; 
             totalTaxiCost = taxiCost(); 
         }
-        //printf("%d", taxiBusinessCover);
+        //printf("%d", taxiCompanyCover);
         //printf("%s", wasATaxiUsed); 
 
         char wasAPrivateCarUsed[10]; 
         int numberDaysRentedVehicleUsed=0;
         int totalMilesDrivenCost = 0; 
-        int rentalCarBusinessCover = 0; 
+        int rentalCarCompanyCover = 0; 
         //Request if a rented/private vehicle was used
         printf("Was a rented vehicle used? ");
         scanf("%s",&wasAPrivateCarUsed); 
@@ -57,14 +57,14 @@ int main(){
         if (result ==0){
             printf("How many days of the trip was a rented vehicle used? ");
             scanf("%d", &numberDaysRentedVehicleUsed);
-            rentalCarBusinessCover = numberDaysRentedVehicleUsed *6; 
+            rentalCarCompanyCover = numberDaysRentedVehicleUsed *6; 
             totalMilesDrivenCost = privateCarCost(); 
         }
         //printf("%s", WasAPrivateCarUsed); 
 
         //Housing needs 
         int hotelNightsSpent = days-1; 
-        int hotelBusinessCover = days*90;  
+        int hotelCompanyCover = days*90;  
         int totalHotelCost = accommodationCost(); 
 
         //Food needs
