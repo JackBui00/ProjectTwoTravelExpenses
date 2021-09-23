@@ -68,7 +68,7 @@ int main(){
         int totalHotelCost = accommodationCost(); 
 
         //Food needs
-
+        
 
 
 
