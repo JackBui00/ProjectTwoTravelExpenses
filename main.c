@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "transportationFunction.h"
-
+#include "lifeFunctions.h"
 int main(){
     printf("Welcome to the Travel Expense Calculator\n");
     
@@ -37,25 +37,40 @@ int main(){
         int result = strcmp("yes", wasATaxiUsed);
         //if a taxi was used, enter the if statement
         if(result == 0){
-            printf("How many days of the trip was a taxi taken?");
+            printf("How many days of the trip was a taxi taken? ");
             scanf("%d",&numberDaysTaxiWasUsed);
             taxiBusinessCover = numberDaysTaxiWasUsed * 10; 
             totalTaxiCost = taxiCost(); 
         }
-        printf("%d", taxiBusinessCover);
+        //printf("%d", taxiBusinessCover);
         //printf("%s", wasATaxiUsed); 
 
-        char WasAPrivateCarUsed[10]; 
-        int totalPrivateCarCost = 0; 
+        char wasAPrivateCarUsed[10]; 
+        int numberDaysRentedVehicleUsed=0;
+        int totalMilesDrivenCost = 0; 
+        int rentalCarBusinessCover = 0; 
         //Request if a rented/private vehicle was used
-        printf("Was a rented vehicle used?");
-        scanf("%s",&WasAPrivateCarUsed); 
-        result = strcmp("yes", WasAPrivateCarUsed);
+        printf("Was a rented vehicle used? ");
+        scanf("%s",&wasAPrivateCarUsed); 
+        result = strcmp("yes", wasAPrivateCarUsed);
         //If a private vehicle was rented, enter if statement 
         if (result ==0){
-            totalPrivateCarCost = privateCarCost(); 
+            printf("How many days of the trip was a rented vehicle used? ");
+            scanf("%d", &numberDaysRentedVehicleUsed);
+            rentalCarBusinessCover = numberDaysRentedVehicleUsed *6; 
+            totalMilesDrivenCost = privateCarCost(); 
         }
         //printf("%s", WasAPrivateCarUsed); 
+
+        //Housing needs 
+        int hotelNightsSpent = days-1; 
+        int hotelBusinessCover = days*90;  
+        int totalHotelCost = accommodationCost(); 
+
+        //Food needs
+
+
+
 
         
     }
