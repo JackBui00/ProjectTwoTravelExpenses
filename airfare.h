@@ -2,7 +2,7 @@
 #define _AIRFARE_C_
 #include <stdio.h>
 
-int airfare(){
+int airfareCost(){
     
     //asks and returns the total cost of airfare
     int airfareCost;
