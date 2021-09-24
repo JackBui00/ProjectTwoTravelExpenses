@@ -6,6 +6,7 @@ int airfare(){
     
     //asks and returns the total cost of airfare
     int airfareCost;
+    printf("How much was spent on airfare: ");
     scanf("%d", airfareCost);
     return airfareCost;
 
