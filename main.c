@@ -70,7 +70,18 @@ int main(){
         int totalHotelCost = accommodationCost(); 
         
         //Food needs
-        double total_meal_cost;
+        char choice;
+	char choice1;
+	double mealCost;
+	int time;
+	int time2;
+	double totalCost;
+	double total_cost_meal;
+	double total_allowable_cost;
+	const double allowable_breakfast_cost = 9.00,
+                      allowable_lunch_cost= 12.00,
+                      allowable_dinner_cost = 16.00;
+	double total_meal_cost;
         if (choice =='Y' || choice == 'y')
 	    {
 		printf("How much was your meal? ");
@@ -102,14 +113,14 @@ int main(){
         		{
             		total_allowable_cost = allowable_dinner_cost;
 
-            		if (meal_fee > allowable_dinner_cost)
+            		if (mealCost > allowable_dinner_cost)
                 			total_meal_cost = mealCost - allowable_dinner_cost;
 
             		else if (mealCost <= allowable_dinner_cost)
                 			total_meal_cost = allowable_dinner_cost - mealCost;
         		}
 
-        		else if (departure_time >= 18)
+        		else if (time >= 18)
             		total_meal_cost = mealCost;
 	} 
 	
