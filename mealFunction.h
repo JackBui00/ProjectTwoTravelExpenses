@@ -1,7 +1,7 @@
 #ifndef __MEALFUNCTION_H_
 #define __MEALFUNCTION_C_
 
-double breakfastCost() {
+double mealExpense() {
 	char choice;
 	char choice1;
 	double mealCost;
