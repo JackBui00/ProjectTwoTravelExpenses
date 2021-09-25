@@ -155,7 +155,7 @@ int main(){
                 			total_meal_cost = mealCost; // 12.00 < n;
         		}
 
-        		else if (arrival_time > 19)
+        		else if (time2 > 19)
         		{
             		total_allowable_cost += allowable_dinner_cost;
             		if (mealCost > allowable_dinner_cost)
