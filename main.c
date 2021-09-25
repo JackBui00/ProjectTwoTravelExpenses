@@ -3,6 +3,7 @@
 #include <string.h>
 #include "transportationFunction.h"
 #include "lifeFunctions.h"
+#include "mealFunction.h"
 int main(){
     printf("Welcome to the Travel Expense Calculator\n");
     
