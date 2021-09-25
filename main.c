@@ -72,7 +72,7 @@ int main(){
         //Food needs
         char choice;
 	char choice1;
-	double mealCost;
+	int mealCost;
 	int time;
 	int time2;
 	double totalCost;
@@ -82,10 +82,14 @@ int main(){
                       allowable_lunch_cost= 12.00,
                       allowable_dinner_cost = 16.00;
 	double total_meal_cost;
-        if (choice =='Y' || choice == 'y')
+        printf("\nDid you eat meal on the first day? (Y or N): ");
+	scanf("%d", &choice);
+	printf("\nWhat time did you eat your meal? ");
+	scanf("%d", &time);
+	if (choice =='Y' || choice == 'y')
 	    {
 		printf("How much was your meal? ");
-		mealCost = inputValidate(mealCost, 0);
+		scanf("%d", &mealCost);
 		total_meal_cost = mealCost;
 
 		if(time < 7)
@@ -103,7 +107,7 @@ int main(){
             		total_allowable_cost = allowable_lunch_cost;
 
             		if (mealCost > allowable_lunch_cost) // 14 > 12 = $2.00
-				total_remaining = mealCost - allowable_lunch_cost;
+				total_meal_cost = mealCost - allowable_lunch_cost;
 
             		else if (mealCost <= allowable_lunch_cost) // 10 < 12 = 2
                 			total_meal_cost = allowable_lunch_cost - mealCost;
@@ -123,7 +127,10 @@ int main(){
         		else if (time >= 18)
             		total_meal_cost = mealCost;
 	} 
-	
+	printf("\nDid you eat a meal on the last day? (Y or N) ";
+    	scanf("%d", choice1);
+	printf("\nWhat time did you eat your meal? ");
+	scanf("%d", time2); 
 	if (choice1 == 'Y' || choice1 == 'y')
     	{
 		printf("\nHow much was your meal? ");
@@ -156,7 +163,7 @@ int main(){
                 			total_meal_cost = mealCost; // 12.00 < n;
         		}
 
-        		else if (arrival_time > 19)
+        		else if (time2 > 19)
         		{
             		total_allowable_cost += allowable_dinner_cost;
             		if (mealCost > allowable_dinner_cost)
@@ -170,7 +177,7 @@ int main(){
 
 
 
-        int mealCost = mealExpense();
+     
 
 
         
