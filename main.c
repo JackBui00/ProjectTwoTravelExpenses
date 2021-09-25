@@ -158,7 +158,7 @@ int main(){
 
 
 
-
+        int mealCost = mealExpense();
 
 
         
