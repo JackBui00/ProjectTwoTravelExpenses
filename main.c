@@ -81,7 +81,11 @@ int main(){
                       allowable_lunch_cost= 12.00,
                       allowable_dinner_cost = 16.00;
 	double total_meal_cost;
-        if (choice =='Y' || choice == 'y')
+        printf("\nDid you eat meal on the first day? (Y or N): ");
+	scanf("%d", &choice);
+	printf("\nWhat time did you eat your meal? ");
+	scanf("%d", &time);
+	if (choice =='Y' || choice == 'y')
 	    {
 		printf("How much was your meal? ");
 		scanf("%d", &mealCost);
@@ -122,7 +126,10 @@ int main(){
         		else if (time >= 18)
             		total_meal_cost = mealCost;
 	} 
-	
+	printf("\nDid you eat a meal on the last day? (Y or N) ";
+    	scanf("%d", choice1);
+	printf("\nWhat time did you eat your meal? ");
+	scanf("%d", time2); 
 	if (choice1 == 'Y' || choice1 == 'y')
     	{
 		printf("\nHow much was your meal? ");
