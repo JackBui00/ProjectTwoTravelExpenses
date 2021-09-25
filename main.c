@@ -69,7 +69,7 @@ int main(){
 
         //Food needs
 
-
+        int mealCost = mealExpense();
 
 
         
