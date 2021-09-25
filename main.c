@@ -4,6 +4,7 @@
 #include "transportationFunction.h"
 #include "lifeFunctions.h"
 #include "mealFunction.h"
+#include "conferenceFee.h"
 int main(){
     printf("Welcome to the Travel Expense Calculator\n");
     
@@ -67,7 +68,7 @@ int main(){
         int hotelNightsSpent = days-1; 
         int hotelCompanyCover = days*90;  
         int totalHotelCost = accommodationCost(); 
-
+        
         //Food needs
         double total_meal_cost;
         if (choice =='Y' || choice == 'y')
