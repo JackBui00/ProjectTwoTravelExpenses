@@ -5,6 +5,7 @@
 #include "lifeFunctions.h"
 #include "airfare.h"
 #include "conferenceFee.h"
+#include "parkingFee.h"
 int main()
 {
     printf("Welcome to the Travel Expense Calculator\n");
@@ -77,6 +78,16 @@ int main()
         //conference fees
         int totalConferenceFees = ConferenceFee();
         //Food needs
+
+        //Parking needs
+        int numberOfDaysParked;
+        int totalParkingCost;
+        int companyParkingCover;
+        printf("How many days was parking used? ");
+        scanf("%d", &numberOfDaysParked);
+        companyParkingCover = numberOfDaysParked * 6;
+        totalParkingCost = parkingFee();
+
         // char allowable_breakfast_cost[9];
         // int totalbreakfastCost = 0;
         // int paid_by_employee = 0;
@@ -127,10 +138,10 @@ int main()
         int totalAirfareCost = airfareCost();
 
         //Total Expenses
-        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost + totalHotelCost + totalConferenceFees; //wip: needs foodCosts and parking fees
+        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost + totalHotelCost + totalConferenceFees + totalParkingCost; //wip: needs foodCosts and parking fees
         printf("The total expenses for this trip is: %d\n", totalExpenses);
         //Total Allowable Expenses
-        int companyCover = hotelCompanyCover + rentalCarCompanyCover + taxiCompanyCover; //wip: needs foodCosts and parking fees
+        int companyCover = hotelCompanyCover + rentalCarCompanyCover + taxiCompanyCover +companyParkingCover; //wip: needs foodCosts and parking fees
         printf("The allowed expenses for this trip is: %d\n", companyCover);
         int reimbursement;
         int moneySaved;
@@ -146,12 +157,13 @@ int main()
         {
             moneySaved = companyCover - totalExpenses;
             reimbursement = 0;
-            
-        }else if (totalExpenses == companyCover){
+        }
+        else if (totalExpenses == companyCover)
+        {
             moneySaved = 0;
             reimbursement = 0;
         }
-
+        ParkingFee(1, 2, 3, 4, 5, 6);
         printf("Total reimbursement: %d\n", reimbursement);
         printf("Total money saved: %d\n", moneySaved);
     }
