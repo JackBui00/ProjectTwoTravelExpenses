@@ -5,7 +5,7 @@
 double ParkingFee(int daysOfTrip, double parking, double totalExpenses,
         double reimbursement, double amntSaved, double totalAllowableExpense){
     char input;
-    printf("Was there any parking fees? ")
+    printf("Was there any parking fees? ");
     scanf("%c", &input);
 
     
@@ -17,7 +17,7 @@ double ParkingFee(int daysOfTrip, double parking, double totalExpenses,
         for (int i = 0; i < daysOfTrip; i++){
             totalAllowableExpense += allowableFee;
 
-            printf("Enter parking fees for the day : ")
+            printf("Enter parking fees for the day : ");
             scanf("%d", &parkingFee);
 
             
