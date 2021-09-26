@@ -126,7 +126,7 @@ int main(){
         		else if (time >= 18)
             		total_meal_cost = mealCost;
 	} 
-	printf("\nDid you eat a meal on the last day? (Y or N) ";
+	printf("\nDid you eat a meal on the last day? (Y or N) ");
     	scanf("%d", &choice1);
 	printf("\nWhat time did you eat your meal? ");
 	scanf("%d", time2); 
