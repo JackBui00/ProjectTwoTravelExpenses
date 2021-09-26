@@ -163,7 +163,7 @@ int main()
             moneySaved = 0;
             reimbursement = 0;
         }
-        ParkingFee(1, 2, 3, 4, 5, 6);
+       
         printf("Total reimbursement: %d\n", reimbursement);
         printf("Total money saved: %d\n", moneySaved);
     }
