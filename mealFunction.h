@@ -13,7 +13,6 @@ double lunchCost() {
 	scanf("%lf", &lunchCost);
 	return lunchCost;
 }
-#endif 
 
 double dinnerCost() {
 	double dinnerCost;
