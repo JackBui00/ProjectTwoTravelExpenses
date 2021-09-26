@@ -38,7 +38,7 @@ int main()
         int totalTaxiCost = 0;
         int taxiCompanyCover = 0;
         //request if a taxi was used
-        printf("Was a Taxi used?");
+        printf("Was a Taxi used? ");
         scanf(" %s", &wasATaxiUsed);
         int result = strcmp("yes", wasATaxiUsed);
         //if a taxi was used, enter the if statement
@@ -78,6 +78,20 @@ int main()
         //conference fees
         int totalConferenceFees = ConferenceFee();
         //Food needs
+        int breakfastCost;
+        int lunchCost;
+        int dinnerCost;
+        int breakfastCount = calculateBreakfast(days, timeOfDeparture, timeOfArrival);
+        int lunchCount = calculateLunch(days, timeOfDeparture, timeOfArrival);
+        int dinnerCount = calculateDinner(days, timeOfDeparture, timeOfArrival);
+        int companyMealCover = companyCoveredFoodCost(breakfastCount, lunchCount, dinnerCount);
+        printf("How much did you spend on breakfast: ");
+        scanf ("%d", &breakfastCost);
+        printf("How much did you spend on lunch: ");
+        scanf ("%d", &lunchCost);
+        printf("How much did you spend on dinner: ");
+        scanf ("%d", &dinnerCost);
+        int totalMealCost = breakfastCost + lunchCost + dinnerCost;
 
         //Parking needs
         int numberOfDaysParked;
@@ -88,60 +102,13 @@ int main()
         companyParkingCover = numberOfDaysParked * 6;
         totalParkingCost = parkingFee();
 
-        // char allowable_breakfast_cost[9];
-        // int totalbreakfastCost = 0;
-        // int paid_by_employee = 0;
-        // printf("Do you eat breakfast?(Y/N) ) ");
-        // scanf("%s", &allowable_breakfast_cost);
-        // int result1 = strcmp("yes", allowable_breakfast_cost);
-
-        // if (result1 == 0)
-        // {
-        //     printf("How much was your breakfast? ");
-        //     scanf("%d", &breakfast_cost);
-        //     paid_by_employee = breakfastCost - 9;
-        //     totalbreakfastCost = breakfastCost();
-        // }
-        // char allowable_lunch_cost[12];
-        // int totallunchCost = 0;
-        // int paidByEmployee = 0;
-        // printf("Do you eat lunch on the first day?(Y/N) )");
-        // scanf("%s", &allowable_lunch_cost);
-        // int result2 = strcmp("yes", allowable_lunch_cost);
-
-        // if (result2 == 0)
-        // {
-        //     printf("How much was your breakfast? ");
-        //     scanf("%d", &breakfast_cost);
-        //     paidByEmployee = breakfastCost - 9;
-        //     totalbreakfastCost = breakfastCost();
-        // }
-        // char allowable_dinner_cost[16];
-        // int totaldinnerCost = 0;
-        // int employeePaid = 0;
-        // printf("Do you eat dinner?(Y/N) )");
-        // scanf("%s", &allowable_dinner_cost);
-        // int result3 = strcmp("yes", allowable_dinner_cost);
-
-        // if (result3 == 0)
-        // {
-        //     printf("How much was your breakfast? ");
-        //     scanf("%d", &breakfast_cost);
-        //     employeePaid = dinnerCost - 9;
-        //     totaldinnerCost = dinnerCost();
-        // }
-
-        // int totalMealCost = totalbreakfastCost + totallunchCost + totaldinnerCost;
-        // printf("Total meal cost= %d\n", totalMealCost);
-
         //Airfare needs
         int totalAirfareCost = airfareCost();
 
         //Total Expenses
-        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost + totalHotelCost + totalConferenceFees + totalParkingCost; //wip: needs foodCosts and parking fees
-        printf("The total expenses for this trip is: %d\n", totalExpenses);
+        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost + totalHotelCost + totalConferenceFees + totalParkingCost +totalMealCost; 
         //Total Allowable Expenses
-        int companyCover = hotelCompanyCover + rentalCarCompanyCover + taxiCompanyCover +companyParkingCover; //wip: needs foodCosts and parking fees
+        int companyCover = hotelCompanyCover + rentalCarCompanyCover + taxiCompanyCover + companyParkingCover+ companyMealCover; 
         printf("The allowed expenses for this trip is: %d\n", companyCover);
         int reimbursement;
         int moneySaved;
@@ -163,7 +130,7 @@ int main()
             moneySaved = 0;
             reimbursement = 0;
         }
-       
+
         printf("Total reimbursement: %d\n", reimbursement);
         printf("Total money saved: %d\n", moneySaved);
     }
