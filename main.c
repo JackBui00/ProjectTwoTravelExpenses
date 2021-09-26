@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "transportationFunction.h"
-#include "lifeFunctions.h"
-#include "airfare.h"
-#include "conferenceFee.h"
-#include "parkingFee.h"
+#include "functions.h"
 int main()
 {
     printf("Welcome to the Travel Expense Calculator\n");
@@ -68,7 +64,6 @@ int main()
             rentalCarCompanyCover = numberDaysRentedVehicleUsed * 6;
             totalMilesDrivenCost = privateCarCost();
         }
-        //printf("%s", WasAPrivateCarUsed);
 
         //Housing needs
         int hotelNightsSpent = days - 1;
@@ -78,7 +73,11 @@ int main()
         //conference fees
         int totalConferenceFees = ConferenceFee();
         //Food needs
-
+        int numberOfBreakfastCovered = calculateBreakfast(days,timeOfDeparture,timeOfArrival);
+        int numberOfLunchCovered = calculateLunch(days,timeOfDeparture,timeOfArrival);
+        int numberOfDinnerCovered = calculateDinner(days,timeOfDeparture,timeOfArrival);
+        int totalMoneyAmountFoodCovered = companyCoveredFoodCost(numberOfBreakfastCovered,numberOfLunchCovered,numberOfDinnerCovered);
+        int totalFoodCost = breakfastCost()+lunchCost()+dinnerCost();
         //Parking needs
         int numberOfDaysParked;
         int totalParkingCost;
@@ -138,10 +137,10 @@ int main()
         int totalAirfareCost = airfareCost();
 
         //Total Expenses
-        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost + totalHotelCost + totalConferenceFees + totalParkingCost; //wip: needs foodCosts and parking fees
+        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost + totalHotelCost + totalConferenceFees + totalParkingCost + totalFoodCost; //wip: needs foodCosts and parking fees
         printf("The total expenses for this trip is: %d\n", totalExpenses);
         //Total Allowable Expenses
-        int companyCover = hotelCompanyCover + rentalCarCompanyCover + taxiCompanyCover +companyParkingCover; //wip: needs foodCosts and parking fees
+        int companyCover = hotelCompanyCover + rentalCarCompanyCover + taxiCompanyCover +companyParkingCover + totalMoneyAmountFoodCovered; //wip: needs foodCosts and parking fees
         printf("The allowed expenses for this trip is: %d\n", companyCover);
         int reimbursement;
         int moneySaved;
