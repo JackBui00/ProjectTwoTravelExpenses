@@ -71,19 +71,46 @@ int main(){
         //Food needs
 	char allowable_breakfast_cost[9];
 	int totalbreakfastCost = 0;
-	int paid_by employee = 0; 
-	printf("Do you eat the breakfast on the first day?(Y/N) )";
+	int paid_by_employee = 0; 
+	printf("Do you eat breakfast?(Y/N) ) ");
 	scanf("%s", &allowable_breakfast_cost);
-	int result = strcmp("yes", allowable_breakfast_cost); 
+	int result1 = strcmp("yes", allowable_breakfast_cost); 
 
-	if(result == 0) {
+	if(result1 == 0) {
 		printf("How much was your breakfast? ");
 		scanf("%d", &breakfast_cost);
-		paid_by employee = breakfastCost - 9;
+		paid_by_employee = breakfastCost - 9;
 		totalbreakfastCost = breakfastCost();
-}
+	}
+	char allowable_lunch_cost[12];
+	int totallunchCost = 0;
+	int paidByEmployee = 0; 
+	printf("Do you eat lunch on the first day?(Y/N) )");
+	scanf("%s", &allowable_lunch_cost);
+	int result2 = strcmp("yes", allowable_lunch_cost); 
 
+	if(result2 == 0) {
+		printf("How much was your breakfast? ");
+		scanf("%d", &breakfast_cost);
+		paidByEmployee = breakfastCost - 9;
+		totalbreakfastCost = breakfastCost();
+	}
+	char allowable_dinner_cost[16];
+	int totaldinnerCost = 0;
+	int employeePaid = 0; 
+	printf("Do you eat dinner?(Y/N) )");
+	scanf("%s", &allowable_dinner_cost);
+	int result3 = strcmp("yes", allowable_dinner_cost); 
 
+	if(result3 == 0) {
+		printf("How much was your breakfast? ");
+		scanf("%d", &breakfast_cost);
+		employeePaid = dinnerCost - 9;
+		totaldinnerCost = dinnerCost();
+	}
+
+	int totalMealCost = totalbreakfastCost + totallunchCost + totaldinnerCost;
+	printf("Total meal cost= %d\n", totalMealCost);
 
      
 
