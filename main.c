@@ -3,6 +3,7 @@
 #include <string.h>
 #include "transportationFunction.h"
 #include "lifeFunctions.h"
+#include "airfare.h"
 int main(){
     printf("Welcome to the Travel Expense Calculator\n");
     
@@ -70,9 +71,15 @@ int main(){
         //Food needs
         
         //Airfare needs
-        int totalAirfareCost = airfare(); 
+        int totalAirfareCost = airfareCost(); 
 
+        //Total Expenses 
+        int totalExpenses = totalAirfareCost + totalTaxiCost + totalMilesDrivenCost +totalHotelCost;
+        //Total Allowable Expenses
 
+        //Excess to be reimbursed 
+
+        //Amount Saved by the business person
 
         
     }
