@@ -1,5 +1,4 @@
-#ifndef __LIFEFUNCTIONS_H_
-#define __LIFEFUNCTIONS_C_
+#include "functions.h"
 #include <stdio.h>
 
 
@@ -66,5 +65,3 @@ int companyCoveredFoodCost(int breakfast,int lunch,int dinner){
 
 
 }
-
-#endif
