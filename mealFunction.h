@@ -7,16 +7,12 @@ double breakfastCost() {
 	scanf("%lf", &breakfastCost);
 	return breakfastCost;
 }
-#endif 
-
 double lunchCost() {
 	double lunchCost;
 	printf("How much did you spend on lunch? ");
 	scanf("%lf", &lunchCost);
 	return lunchCost;
 }
-#endif 
-
 double dinnerCost() {
 	double dinnerCost;
 	printf("How much did you spend on dinner? ");
