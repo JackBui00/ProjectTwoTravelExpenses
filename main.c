@@ -70,9 +70,11 @@ int main(){
         int totalHotelCost = accommodationCost(); 
         
         //Food needs
-        char choice;
+        double inputValidate(double); 
+        double inputValidate(double, int)
+	char choice;
 	char choice1;
-	int mealCost;
+	double mealCost;
 	int time;
 	int time2;
 	double totalCost;
@@ -89,8 +91,8 @@ int main(){
 	if (choice =='Y' || choice == 'y')
 	    {
 		printf("How much was your meal? ");
-		scanf("%d", &mealCost);
-		total_meal_cost = mealCost;
+		mealCost = inputValidate(mealCost, 0);
+                total_meal_Cost += mealCost;
 
 		if(time < 7)
         		{
@@ -127,7 +129,7 @@ int main(){
         		else if (time >= 18)
             		total_meal_cost = mealCost;
 	} 
-	printf("\nDid you eat a meal on the last day? (Y or N) ";
+	printf("\nDid you eat a meal on the last day? (Y or N) ");
     	scanf("%d", &choice1);
 	printf("\nWhat time did you eat your meal? ");
 	scanf("%d", time2); 
