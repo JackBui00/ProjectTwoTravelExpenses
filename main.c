@@ -127,13 +127,13 @@ int main(){
             		total_meal_cost = mealCost;
 	} 
 	printf("\nDid you eat a meal on the last day? (Y or N) ";
-    	scanf("%d", choice1);
+    	scanf("%d", &choice1);
 	printf("\nWhat time did you eat your meal? ");
 	scanf("%d", time2); 
 	if (choice1 == 'Y' || choice1 == 'y')
     	{
 		printf("\nHow much was your meal? ");
-        		scanf("%d", mealCost);
+        		scanf("%d", &mealCost);
 
         		totalCost = mealCost;
 
